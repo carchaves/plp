@@ -1,0 +1,42 @@
+principio de remplazo
+igualdad de funciones
+	curry / uncurry son inversas
+
+para saber si dos funciones son iguales -> extensionalidad de funciones
+	f = g siendo ambas funciones sii en todo punto son iguales
+
+	propiedades utiles
+
+___________________________________________________________________________________________________
+ejemplo:
+	queremos ver si curry y uncurry es lo mismo que la función identidad.
+	
+	A f:: a -> b ->c (curry . uncurry) f = id f
+	sea f:: a -> b -> c
+		(curry . uncurry) f = curry (uncurry f)
+		= \x y -> uncurry f (x,y) = \x y -> (\(x',y') -> f x' y')(x,y)
+		= \x y -> = f x y = x -> (\y -> (f x) y ) = \x -> f x = f = id f
+					\x -> F x = F
+					
+___________________________________________________________________________________________________
+Pares y unión disjunta/ tipo suma
+	principio de extensionalidad
+	
+
+ejemplo:
+prod :: Either Int (Int, Int) -> Either Int (Int, Int) -> Either Int (Int, Int)
+{P0} prod (Left x) (Left y) = Left (x * y)
+{P1} prod (Left x) (Right (y, z)) = Right (x * y, x * z)
+{P2} prod (Right (y, z)) (Left x) = Right (y * x, z * x)
+{P3} prod (Right (w, x)) (Right (y, z)) = Left (w * y + x x * z)
+
+sean p, q :: Either..
+
+...
+demostraciones
+...
+
+___________________________________________________________________________________________________
+otro caso:
+Funciones como estructuras de datos
+	
