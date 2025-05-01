@@ -238,6 +238,28 @@ trasponer x = foldr (\l rec -> zipWith (:) l rec) (replicate (length (head x)) [
 -- [7 8 9]    [3 6 9]
 
 -- Ejercicio 9 ⋆
--- i. Definir y dar el tip o del esquema de recursión foldNat sobre los naturales. Utilizar el tip o Integer de
+-- i. Definir y dar el tipo del esquema de recursión foldNat sobre los naturales. Utilizar el tipo Integer de
 -- Haskell (la función va a estar definida sólo para los enteros mayores o iguales que 0).
 
+foldNat :: (Integer -> b -> b) -> b -> Integer -> b
+foldNat _ v 0 = v
+foldNat f v n = f n (foldNat f v (n-1))
+
+-- II. Utilizando foldNat, definir la función potencia.
+
+potencia :: Integer -> Integer -> Integer
+potencia n m = foldNat (\m rec -> n * rec) 1 m
+
+-- Ejercicio 10
+-- I. Definir la función genLista :: a -> (a -> a) -> Integer -> [a], que genera una lista de una cantidad dada de elementos,
+-- a partir de un elemento inicial y de una función de incremento entre los elementos de la lista. Dicha función de incremento,
+-- dado un elemento de la lista, devuelve el elemento siguiente.
+
+genLista :: a -> (a -> a) -> Integer -> [a]
+genLista i f l = foldNat (\x rec -> i : (map f rec) ) [] l 
+
+-- II. Usando genLista, definir la función desdeHasta, que dado un par de números (el primero menor que el segundo),
+-- devuelve una lista de números consecutivos desde el primero hasta el segundo.
+
+desdeHasta :: Integer -> Integer -> [Integer]
+desdeHasta a b = genLista a (+1) (b-a+1)
