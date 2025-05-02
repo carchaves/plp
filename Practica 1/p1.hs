@@ -321,12 +321,13 @@ cantNodos t = foldAB 0 (\i r d -> 1 + i + d) t
 --     Se recomienda definir una función auxiliar para comparar la raíz con un posible resultado de la recursión
 --     para un árbol que puede o no ser Nil.
 
+duda
 
 -- IV. Definir la función esABB :: Ord a => AB a -> Bool que chequea si un árbol es un árbol binario de búsqueda.
 --     Recordar que, en un árbol binario de búsqueda, el valor de un nodo es mayor o igual que los valores que
 --     aparecen en el subárbol izquierdo y es estrictamente menor que los valores que aparecen en el subárbol
 --     derecho.
---
+        
 -- V. Justificar la elección de los esquemas de recursión utilizados para los tres puntos anteriores.
 --
 -- ---
