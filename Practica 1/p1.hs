@@ -263,3 +263,73 @@ genLista i f l = foldNat (\x rec -> i : (map f rec) ) [] l
 
 desdeHasta :: Integer -> Integer -> [Integer]
 desdeHasta a b = genLista a (+1) (b-a+1)
+
+--  Ejercicio 11
+--
+-- Definir el esquema de recursión estructural para el siguiente tipo:
+--
+data Polinomio a = X
+    | Cte a
+    | Suma (Polinomio a) (Polinomio a)
+    | Prod (Polinomio a) (Polinomio a)
+--
+-- Luego usar el esquema definido para escribir la función evaluar :: Num a => a -> Polinomio a -> a que, dado un número y un polinomio, devuelve el resultado de evaluar el polinomio dado en el número dado.
+
+foldPoli :: b -> (a -> b) -> (b -> b -> b) -> (b -> b -> b) -> Polinomio a -> b
+foldPoli var _ _ _ (X) = var
+foldPoli var fcte _ _ (Cte a) = fcte a 
+foldPoli var fcte fsuma fprod (Suma p1 p2) = fsuma (foldPoli var fcte fsuma fprod p1) (foldPoli var fcte fsuma fprod p2) 
+foldPoli var fcte fsuma fprod (Prod p1 p2) = fprod (foldPoli var fcte fsuma fprod p1) (foldPoli var fcte fsuma fprod p2)
+
+evaluar :: Num a => Polinomio a -> a -> a
+evaluar p x = foldPoli x id (+) (*) p
+
+-- Ejercicio 12
+
+-- Considerar el siguiente tipo, que representa a los árboles binarios:
+data AB a = Nil | Bin (AB a) a (AB a) deriving (Eq, Show)
+
+-- I. Usando recursión explícita, definir los esquemas de recursión estructural (foldAB) y primitiva (recAB), y dar sus tipos.
+
+foldAB :: b -> (b -> a -> b -> b) -> AB a -> b
+foldAB fNil _ (Nil) = fNil
+foldAB fNil fAB (Bin i r d) = fAB (foldAB fNil fAB i) r (foldAB fNil fAB d)
+
+recAB :: b -> (AB a -> a -> AB a -> b -> b -> b) -> AB a -> b
+recAB casoNil _ Nil = casoNil
+recAB casoNil casoBin (Bin izq valor der) = 
+    casoBin izq valor der (recAB casoNil casoBin izq) (recAB casoNil casoBin der)
+
+-- II. Definir las funciones:
+--     - esNil (puede utilizarse case en lugar de foldAB o recAB),
+--     - altura,
+--     - cantNodos.
+
+esNil :: AB a -> Bool
+esNil t = 
+    case t of 
+        Nil -> True
+        _ -> False
+
+altura :: AB a -> Integer
+altura t = foldAB 0 (\i r d -> 1 + max i d) t
+
+cantNodos :: AB a -> Integer
+cantNodos t = foldAB 0 (\i r d -> 1 + i + d) t
+
+-- III. Definir la función mejorSegún :: (a -> a -> Bool) -> AB a -> a, análoga a la del ejercicio 3, para árboles.
+--     Se recomienda definir una función auxiliar para comparar la raíz con un posible resultado de la recursión
+--     para un árbol que puede o no ser Nil.
+
+
+-- IV. Definir la función esABB :: Ord a => AB a -> Bool que chequea si un árbol es un árbol binario de búsqueda.
+--     Recordar que, en un árbol binario de búsqueda, el valor de un nodo es mayor o igual que los valores que
+--     aparecen en el subárbol izquierdo y es estrictamente menor que los valores que aparecen en el subárbol
+--     derecho.
+--
+-- V. Justificar la elección de los esquemas de recursión utilizados para los tres puntos anteriores.
+--
+-- ---
+-- Página 3 de 5
+-- Paradigmas de Programación (PLP)
+-- 1er Cuatrimestre de 2025
