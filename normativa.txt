@@ -1,0 +1,45 @@
+
+
+Instancias de evaluación
+
+La aprobación de la parte práctica de la materia consiste en la aprobación de:
+
+        2 parciales
+        2 trabajos prácticos grupales (alias "talleres"), en grupos de 4
+            TP Funcional (Haskell)
+            TP Lógico (Prolog)
+
+    Parciales: cada parcial consta de dos partes: la primera es una serie de preguntas básicas sobre conceptos fundamentales de la materia, y la segunda consta de 3 ejercicios a desarrollar.
+    Es necesario responder correctamente al menos el 75% de la primera parte para acceder a la corrección de la segunda parte. Habiendo cumplido este requisito, la nota del parcial se definirá en función de la segunda parte: cada ejercicio se evalúa con Excelente (E), Muy bien (MB), Bien (B), Regular (R), Insuficiente (I) o Nulo (-). Para aprobar el parcial se deben tener dos ejercicios B o superior y el otro R o superior. 
+    En caso de tener un ejercicio con I, uno con MB o E y al menos B en el otro, se le puede conceder la nota "Aprobado Condicional". En caso de tener ambos parciales con "Aprobado Condicional" se debe recuperar al menos uno de ellos y la nota del recuperatorio debe alcanzar para estar Aprobado.
+
+    Trabajos Prácticos (o talleres): consisten en un conjunto de ejercicios para programar en un lenguaje particular, posiblemente acompañado de preguntas teóricas. Las notas posibles son Aprobado (A), Aprobado con observaciones (A-), Insuficiente (I) o un ejercicio a reentregar (I+). Las observaciones no influyen en la aprobación de la cursada, pero es importante tenerlas en cuenta al estudiar para los parciales o el final.
+
+Cada instancia tiene su propio recuperatorio. La nota del recuperatorio sobrescribe a la de la instancia original.
+
+La materia es promocionable. Para promocionar es necesario tener - en ambos parciales - al menos dos ejercicios MB o E, y el otro B o superior, además de tener ambos trabajos prácticos aprobados (con A o A-). En caso de cumplir estas condiciones se podrá acceder a un coloquio de promoción que definirá la nota numérica de la materia, el cual se deberá rendir en alguna de las tres primeras fechas de finales.
+
+La metodología de evaluación de cada una de las instancias, en caso de modificarse, será comunicada con una semana de anticipación. Todas las instancias de recuperación serán al final del cuatrimestre. Para más información sobre las fechas, ver el calendario de la materia.
+
+Consultas
+
+Las consultas se realizarán en el aula en el horario de la materia. Las consultas de índole administrativo pueden dirigirse a la lista de mails de docentes: plp-docentes (arroba) dc.uba.ar.
+
+Habrá días destinados enteramente a consultas en los días previos a cada parcial y a cada recuperatorio. Para las consultas sobre las guías de ejercicios o sobre los tps, podrán consultar todos los días de clase entre las 17 y las 17:30 o desde que finalice la clase (idealmente antes de las 21:30) hasta las 22.
+
+Pueden ingresar al servidor de Discord de la materia para participar de potenciales discusiones o hacerse consultas entre estudiantes.
+
+Guías de ejercicios
+
+La materia cuenta con una guía práctica de ejercicios por cada tema a evaluar. Todas las guías están pensadas para aprender los conceptos que queremos transmitir en la materia. Recomendamos fuertemente realizar las guías, y no estudiar de parciales viejos ya que pueden contar con errores y aclaraciones que fueron hechas en su momento, o haber evaluado un tema muy específico. Los ejercicios más representativos de parciales fueron agregados a la guía práctica.
+
+Priorizaremos dudas de guías de ejercicios por sobre dudas de parciales viejos.
+
+
+Otras aclaraciones
+
+    Todas las novedades a lo largo del cuatrimestre serán informadas a través del foro de avisos del campus.
+
+    Los exámenes parciales son a libro abierto.
+
+
